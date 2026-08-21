@@ -1,25 +1,24 @@
+![probablyBeta](https://cdn.modrinth.com/data/cached_images/e254b456b978dc4872255a765caf0d1a6925749f.png)\
+is a rather simple modpack that aims to fairly faithfully recreate the experience of b1.7.3 on 1.21.1 (Neoforge). It does also feature plenty of new additions, tweaks, and opinionated changes.
+## Features
+- Slight texture and visual tweaks
+- New building blocks
+- Revamped cave generation
+- Several optional resourcepacks
+- Plenty of Redstone Update components
+- New plants like shrubs, seaweed and iris
+- Slightly updated nether
+- Quivers
+- And more :D
 
-Installation information
-=======
+## Credits
+- [Golden Days](https://modrinth.com/resourcepack/golden-days) - Old lava texture and colors.json
+- [Dzurchick](https://modrinth.com/user/dzurchick) - Score script
+- [Afk](https://www.youtube.com/@awayfromkeyboard1111) - Emissive nametag mixin (core mod)
+- [Knownser](https://modrinth.com/user/Knownser) - Explosion mixin from Explodee (core mod, used under MIT License)
+- [HazelsInferno](https://modrinth.com/user/HazelsInferno) - Sound ambience resourcepack, creating [Seecret Sunday](https://modrinth.com/modpack/seecret-sunday) which this pack was inspired by
+- [toosday](https://soundcloud.com/toosday28) - pack's name
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Info
+- If you found a bug/issue, or simply want to suggest something for the pack, please let me know! (probablyekho on Discord)
+- I don't plan to create a space for this modpack specifically, although if you'd like to share whatever you've done during your playthrough of it, I recommend doing so in [DB3K's Discord server!](https://discord.gg/2phEd2mQhc)
