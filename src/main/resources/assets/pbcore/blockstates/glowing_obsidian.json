@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "pbcore:block/glowing_obsidian"
+    }
+  }
+}

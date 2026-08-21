@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "pbcore:block/cyan_lamp"
+    },
+    "lit=true": {
+      "model": "pbcore:block/cyan_lamp_on"
+    }
+  }
+}

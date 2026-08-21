@@ -1,0 +1,43 @@
+{
+  "required": true,
+  "package": "dev.probablyekho.pbcore.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixinextras": {
+    "minVersion": "0.5.3"
+  },
+  "mixins": [
+    "BlockColorsMixin",
+    "CarpetBlockMixin",
+    "CatMixin",
+    "CaveSoundManagerMixin",
+    "CreeperMixin",
+    "EnderManMixin",
+    "EntityMixin",
+    "ExplosionMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "MinecraftPiecesMixin",
+    "MineshaftStructureMixin",
+    "MonsterRoomFeatureMixin",
+    "NetherSproutsBlockMixin",
+    "NoteBlockMixin",
+    "PrimedTntMixin",
+    "SlimeMixin",
+    "ZetaPistonStructureResolverMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "ChatComponentMixin",
+    "ChatScreenMixin",
+    "GlowingNametagMixin",
+    "GuiGraphicsMixin",
+    "ItemEntityRendererMixin",
+    "LocalPlayerMixin",
+    "SimpleSoundInstanceMixin"
+  ]
+}

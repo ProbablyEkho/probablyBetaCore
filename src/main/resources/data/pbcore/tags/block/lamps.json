@@ -1,0 +1,20 @@
+{
+  "values": [
+    "pbcore:red_lamp",
+    "pbcore:black_lamp",
+    "pbcore:blue_lamp",
+    "pbcore:brown_lamp",
+    "pbcore:cyan_lamp",
+    "pbcore:gray_lamp",
+    "pbcore:green_lamp",
+    "pbcore:light_blue_lamp",
+    "pbcore:light_gray_lamp",
+    "pbcore:lime_lamp",
+    "pbcore:magenta_lamp",
+    "pbcore:orange_lamp",
+    "pbcore:pink_lamp",
+    "pbcore:purple_lamp",
+    "pbcore:white_lamp",
+    "pbcore:yellow_lamp"
+  ]
+}

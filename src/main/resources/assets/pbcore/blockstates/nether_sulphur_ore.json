@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "pbcore:block/nether_sulphur_ore"
+    }
+  }
+}

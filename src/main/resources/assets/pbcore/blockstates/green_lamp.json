@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "pbcore:block/green_lamp"
+    },
+    "lit=true": {
+      "model": "pbcore:block/green_lamp_on"
+    }
+  }
+}

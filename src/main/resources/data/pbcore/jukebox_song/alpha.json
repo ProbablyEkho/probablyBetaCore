@@ -1,0 +1,8 @@
+{
+  "comparator_output": 1,
+  "description": {
+    "translate": "item.pbcore.music_disc_alpha.desc"
+  },
+  "length_in_seconds": 603.0,
+  "sound_event": "pbcore:alpha"
+}

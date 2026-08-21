@@ -1,0 +1,8 @@
+{
+  "comparator_output": 13,
+  "description": {
+    "translate": "item.pbcore.music_disc_face.desc"
+  },
+  "length_in_seconds": 116.0,
+  "sound_event": "pbcore:face"
+}

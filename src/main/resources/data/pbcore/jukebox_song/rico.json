@@ -1,0 +1,8 @@
+{
+  "comparator_output": 14,
+  "description": {
+    "translate": "item.pbcore.music_disc_rico.desc"
+  },
+  "length_in_seconds": 96.0,
+  "sound_event": "pbcore:rico"
+}

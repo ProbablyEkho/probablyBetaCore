@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pbcore:item/quiver"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "damaged": 1,
+        "damage": 1
+      },
+      "model": "pbcore:item/quiver_empty"
+    }
+  ]
+}

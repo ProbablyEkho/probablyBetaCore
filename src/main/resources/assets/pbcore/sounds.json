@@ -1,0 +1,50 @@
+{
+    "alpha": {
+        "sounds": [
+            {
+                "name": "music/game/end/alpha",
+                "stream": true
+            }
+        ]
+    },
+    "dog": {
+        "sounds": [
+            {
+                "name": "pbcore:music/music_disc_dog",
+                "stream": true
+            }
+        ]
+    },
+    "face": {
+        "sounds": [
+            {
+                "name": "pbcore:music/music_disc_face",
+                "stream": true
+            }
+        ]
+    },
+    "rico": {
+        "sounds": [
+            {
+                "name": "pbcore:music/music_disc_rico",
+                "stream": true
+            }
+        ]
+    },
+    "calm4": {
+        "sounds": [
+            {
+                "name": "pbcore:music/music_disc_calm4",
+                "stream": true
+            }
+        ]
+    },
+    "pterodactyl": {
+        "sounds": [
+            {
+                "name": "pbcore:music/music_disc_pterodactyl",
+                "stream": true
+            }
+        ]
+    }
+}
