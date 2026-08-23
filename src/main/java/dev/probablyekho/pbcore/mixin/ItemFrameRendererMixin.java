@@ -24,5 +24,6 @@ public class ItemFrameRendererMixin {
         poseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
         poseStack.mulPose(Axis.ZP.rotationDegrees(180.0F));
         poseStack.scale(2, 2, 0.001F);
+        poseStack.translate(0, 0, 5);
     }
 }
