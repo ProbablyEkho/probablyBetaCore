@@ -38,6 +38,7 @@
     "GlowingNametagMixin",
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",
+    "ItemFrameRendererMixin",
     "LocalPlayerMixin",
     "SimpleSoundInstanceMixin"
   ]
