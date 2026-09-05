@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,14 +44,6 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> RED = registerBlock(
             "red",
             () -> new RedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).instabreak().sound(SoundType.GRASS).ignitedByLava().isRedstoneConductor(BlockRegistry::never)));
-	public static final DeferredBlock<CropBlock> FLAX = registerBlock(
-            "flax",
-            () -> new CropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)) {
-                @Override
-                protected ItemLike getBaseSeedId() {
-                    return ItemRegistry.FLAX_SEEDS.get();
-                }
-            });
 
     public static final DeferredBlock<Block> WHITE_LAMP = registerBlock("white_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));
     public static final DeferredBlock<Block> LIGHT_GRAY_LAMP = registerBlock("light_gray_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));

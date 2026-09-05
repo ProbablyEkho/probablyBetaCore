@@ -4,7 +4,6 @@
   "block.pbcore.glowing_obsidian": "Magmatic Obsidian",
   "block.pbcore.nether_sulphur_ore": "Nether Sulphur Ore",
   "block.pbcore.red": "RED",
-  "block.pbcore.flax": "Flax Crops",
 
   "block.pbcore.black_lamp": "Black Lamp",
   "block.pbcore.gray_lamp": "Gray Lamp",
@@ -25,7 +24,6 @@
 
   "item.pbcore.quiver": "Quiver",
   "item.pbcore.fireball": "Fireball",
-  "item.pbcore.flax_seeds": "Flax Seeds",
   "item.pbcore.music_disc_alpha": "Music Disc",
   "item.pbcore.music_disc_dog": "Music Disc",
   "item.pbcore.music_disc_face": "Music Disc",

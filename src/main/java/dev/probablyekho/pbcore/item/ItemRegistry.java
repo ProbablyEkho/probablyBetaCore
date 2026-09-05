@@ -29,8 +29,6 @@ public class ItemRegistry {
 
     public static final DeferredItem<Item> FIREBALL = ITEMS.register("fireball",
             () -> new FireballItem(new Item.Properties()));
-    public static final DeferredItem<Item> FLAX_SEEDS = ITEMS.register("flax_seeds",
-            () -> new ItemNameBlockItem(BlockRegistry.FLAX.get(), new Item.Properties()));
     public static final DeferredItem<Item> QUIVER = ITEMS.register("quiver",
             () -> new QuiverItem(ArmorMaterialRegistry.QUIVER, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(512)));
 
