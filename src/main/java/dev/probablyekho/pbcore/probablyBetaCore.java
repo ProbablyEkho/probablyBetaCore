@@ -127,7 +127,6 @@ public class probablyBetaCore {
 			event.accept(BlockRegistry.OBSIDIAN);
 			event.accept(BlockRegistry.GLOWING_OBSIDIAN);
 			event.accept(BlockRegistry.NETHER_SULPHUR_ORE);
-			event.accept(ItemRegistry.FLAX_SEEDS);
 			event.accept(BlockRegistry.RED);
 		}
 		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
