@@ -39,6 +39,7 @@
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",
     "ItemFrameRendererMixin",
+    "LivingEntityRendererMixin",
     "LocalPlayerMixin",
     "SimpleSoundInstanceMixin"
   ]

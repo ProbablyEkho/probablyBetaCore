@@ -21,7 +21,6 @@ import static net.minecraft.world.entity.monster.Monster.isDarkEnoughToSpawn;
 public class SlimeMixin {
     @Unique
     protected final RandomSource random = RandomSource.create();
-
     @Unique
     private static boolean checkMonsterlikeSpawnRules(EntityType<Slime> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return level.getDifficulty() != Difficulty.PEACEFUL
