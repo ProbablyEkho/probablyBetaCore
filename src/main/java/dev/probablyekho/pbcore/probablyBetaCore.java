@@ -13,6 +13,7 @@ import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -20,7 +21,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
+import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
@@ -113,7 +117,13 @@ public class probablyBetaCore {
             QuiverItem.consumeArrow(itemStack);
         }
     }
-
+    @SubscribeEvent
+    public void jumpSound(LivingEvent.LivingJumpEvent event) {
+        LivingEntity livingEntity = event.getEntity();
+        BlockPos blockPos = livingEntity.blockPosition().below();
+        SoundType soundtype = livingEntity.level().getBlockState(blockPos).getSoundType(livingEntity.level(), blockPos, livingEntity);
+        livingEntity.playSound(soundtype.getStepSound(), (float) (soundtype.getVolume() * 1.1125), (float) (soundtype.getPitch() * 1.25));
+    }
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
         if(event.getState().is(Blocks.SEAGRASS)) {

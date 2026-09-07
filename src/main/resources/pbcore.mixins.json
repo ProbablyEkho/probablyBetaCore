@@ -15,6 +15,7 @@
     "EnderManMixin",
     "EntityMixin",
     "ExplosionMixin",
+    "FallingBlockEntityMixin",
     "ItemMixin",
     "LivingEntityMixin",
     "MinecraftPiecesMixin",

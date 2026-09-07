@@ -37,7 +37,6 @@ public class SoundRegistry {
     public static final Supplier<SoundEvent> PTERODACTYL = registerSoundEvent("pterodactyl");
     public static final ResourceKey<JukeboxSong> PTERODACTYL_KEY = createSong("pterodactyl");
 
-
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(probablyBetaCore.MODID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
