@@ -122,7 +122,7 @@ public class probablyBetaCore {
         LivingEntity livingEntity = event.getEntity();
         BlockPos blockPos = livingEntity.blockPosition().below();
         SoundType soundtype = livingEntity.level().getBlockState(blockPos).getSoundType(livingEntity.level(), blockPos, livingEntity);
-        livingEntity.playSound(soundtype.getStepSound(), (float) (soundtype.getVolume() * 1.1125), (float) (soundtype.getPitch() * 1.25));
+        livingEntity.playSound(soundtype.getStepSound(), (float) (soundtype.getVolume() * 0.5), (float) (soundtype.getPitch() * 1.25));
     }
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
