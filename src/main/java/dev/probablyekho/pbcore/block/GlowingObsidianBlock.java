@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.MagmaBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.common.enums.BubbleColumnDirection;
 
 public class GlowingObsidianBlock extends MagmaBlock {
 
@@ -33,5 +34,10 @@ public class GlowingObsidianBlock extends MagmaBlock {
 		} else {
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		}
+	}
+
+	@Override
+	public BubbleColumnDirection getBubbleColumnDirection(BlockState state) {
+		return BubbleColumnDirection.DOWNWARD;
 	}
 }
