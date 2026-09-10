@@ -37,7 +37,7 @@ public class BlockRegistry {
             () -> new ObsidianBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(40.0F, 1200.0F).randomTicks().pushReaction(PushReaction.BLOCK)));
 	public static final DeferredBlock<Block> GLOWING_OBSIDIAN = registerBlock(
             "glowing_obsidian",
-            () -> new GlowingObsidianBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((p_152684_) -> 15).strength(40.0F, 1200.0F).pushReaction(PushReaction.BLOCK)));
+            () -> new GlowingObsidianBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((p_152684_) -> 15).strength(40.0F, 1200.0F).isValidSpawn((p_187421_, p_187422_, p_187423_, p_187424_) -> p_187424_.fireImmune()).pushReaction(PushReaction.BLOCK)));
 	public static final DeferredBlock<Block> NETHER_SULPHUR_ORE = registerBlock(
             "nether_sulphur_ore",
             () -> new SulphurBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 0.4F).sound(SoundType.NETHERRACK)));
