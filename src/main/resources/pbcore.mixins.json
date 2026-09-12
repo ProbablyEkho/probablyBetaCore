@@ -26,6 +26,7 @@
     "NoteBlockMixin",
     "PrimedTntMixin",
     "SlimeMixin",
+    "SpiderMixin",
     "TreeGrowerMixin",
     "ZetaPistonStructureResolverMixin"
   ],

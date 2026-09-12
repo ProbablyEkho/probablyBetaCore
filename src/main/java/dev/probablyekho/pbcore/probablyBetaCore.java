@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
@@ -42,7 +41,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(probablyBetaCore.MODID)
@@ -122,7 +120,7 @@ public class probablyBetaCore {
         LivingEntity livingEntity = event.getEntity();
         BlockPos blockPos = livingEntity.blockPosition().below();
         SoundType soundtype = livingEntity.level().getBlockState(blockPos).getSoundType(livingEntity.level(), blockPos, livingEntity);
-        livingEntity.playSound(soundtype.getStepSound(), (float) (soundtype.getVolume() * 0.5), (float) (soundtype.getPitch() * 1.25));
+        livingEntity.playSound(soundtype.getStepSound(), (float) (0.6 + (Math.random() + (Math.random() * 0.6))), (float) (0.8 + (Math.random() * 0.4)));
     }
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
@@ -169,10 +167,5 @@ public class probablyBetaCore {
             event.accept(BlockRegistry.MAGENTA_LAMP);
             event.accept(BlockRegistry.PINK_LAMP);
 		}
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
     }
 }
