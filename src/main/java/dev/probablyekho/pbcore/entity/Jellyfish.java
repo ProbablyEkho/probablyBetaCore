@@ -1,22 +1,23 @@
 package dev.probablyekho.pbcore.entity;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
 
 public class Jellyfish extends Mob {
@@ -90,6 +91,10 @@ public class Jellyfish extends Mob {
         return 0.0;
     }
 
+    public static boolean checkJellyfishSpawnRules(EntityType<Jellyfish> jellyfish, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return pos.getY() >= 96 && level.canSeeSky(pos) && level.getMoonPhase() == 4 && Monster.isDarkEnoughToSpawn((ServerLevelAccessor) level, pos, random);
+    }
+
     @Override
     public void aiStep() {
         super.aiStep();
@@ -152,6 +157,9 @@ public class Jellyfish extends Mob {
         this.xBodyRot += (float) ((-Mth.atan2(horizontalDistance, movement.y) * (180.0F / (float) Math.PI) - this.xBodyRot) * 0.1F);
         if (!this.level().isClientSide) {
             this.damageNearbyEntities();
+        }
+        if (this.isAlive() && this.isSunBurnTick()) {
+            this.igniteForSeconds(8.0F);
         }
     }
 
