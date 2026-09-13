@@ -4,6 +4,8 @@ import dev.probablyekho.pbcore.client.RedRenderer;
 import dev.probablyekho.pbcore.client.Tinting;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,6 +14,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RenderPlayerEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -43,5 +46,25 @@ public class probablyBetaCoreClient {
             EntityRegistry.PRIMED_RED.get(),
             RedRenderer::new
         );
+    }
+    @SubscribeEvent
+    public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
+        Player player = event.getEntity();
+        if (!player.isSleeping()) {
+            return;
+        }
+        PlayerModel<?> playerModel = event.getRenderer().getModel();
+        playerModel.body.visible = false;
+        playerModel.jacket.visible = false;
+        playerModel.leftArm.visible = false;
+        playerModel.leftSleeve.visible = false;
+        playerModel.rightArm.visible = false;
+        playerModel.rightSleeve.visible = false;
+        playerModel.leftLeg.visible = false;
+        playerModel.leftPants.visible = false;
+        playerModel.rightLeg.visible = false;
+        playerModel.rightPants.visible = false;
+        playerModel.head.visible = true;
+        playerModel.hat.visible = true;
     }
 }
