@@ -2,6 +2,7 @@ package dev.probablyekho.pbcore;
 
 import dev.probablyekho.pbcore.block.BlockRegistry;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
+import dev.probablyekho.pbcore.entity.Jellyfish;
 import dev.probablyekho.pbcore.entity.PrimedRed;
 import dev.probablyekho.pbcore.item.ArmorMaterialRegistry;
 import dev.probablyekho.pbcore.item.ItemRegistry;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
@@ -53,6 +55,7 @@ public class probablyBetaCore {
     public probablyBetaCore(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::registerEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (probablyBetaCore) to respond directly to events.
@@ -88,6 +91,9 @@ public class probablyBetaCore {
                 return itemStack;
             }
         });
+    }
+    public void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(EntityRegistry.JELLYFISH.get(), Jellyfish.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -166,6 +172,9 @@ public class probablyBetaCore {
             event.accept(BlockRegistry.PURPLE_LAMP);
             event.accept(BlockRegistry.MAGENTA_LAMP);
             event.accept(BlockRegistry.PINK_LAMP);
+		}
+		if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			event.accept(ItemRegistry.JELLYFISH_SPAWN_EGG);
 		}
     }
 }

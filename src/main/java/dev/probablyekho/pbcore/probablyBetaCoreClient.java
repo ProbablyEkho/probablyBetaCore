@@ -1,11 +1,12 @@
 package dev.probablyekho.pbcore;
 
+import dev.probablyekho.pbcore.client.JellyfishRenderer;
 import dev.probablyekho.pbcore.client.RedRenderer;
 import dev.probablyekho.pbcore.client.Tinting;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.PlayerModel;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -46,25 +47,28 @@ public class probablyBetaCoreClient {
             EntityRegistry.PRIMED_RED.get(),
             RedRenderer::new
         );
+        event.registerEntityRenderer(
+            EntityRegistry.JELLYFISH.get(),
+            JellyfishRenderer::new
+        );
     }
     @SubscribeEvent
     public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
-        Player player = event.getEntity();
-        if (!player.isSleeping()) {
-            return;
+        if (event.getEntity().isSleeping()) {
+            PlayerModel<?> playerModel = event.getRenderer().getModel();
+            playerModel.body.visible = false;
+            playerModel.jacket.visible = false;
+            playerModel.leftArm.visible = false;
+            playerModel.leftSleeve.visible = false;
+            playerModel.rightArm.visible = false;
+            playerModel.rightSleeve.visible = false;
+            playerModel.leftLeg.visible = false;
+            playerModel.leftPants.visible = false;
+            playerModel.rightLeg.visible = false;
+            playerModel.rightPants.visible = false;
+            playerModel.head.visible = true;
+            playerModel.hat.visible = true;
+            event.getPoseStack().translate(0, -0.125, 0);
         }
-        PlayerModel<?> playerModel = event.getRenderer().getModel();
-        playerModel.body.visible = false;
-        playerModel.jacket.visible = false;
-        playerModel.leftArm.visible = false;
-        playerModel.leftSleeve.visible = false;
-        playerModel.rightArm.visible = false;
-        playerModel.rightSleeve.visible = false;
-        playerModel.leftLeg.visible = false;
-        playerModel.leftPants.visible = false;
-        playerModel.rightLeg.visible = false;
-        playerModel.rightPants.visible = false;
-        playerModel.head.visible = true;
-        playerModel.hat.visible = true;
     }
 }

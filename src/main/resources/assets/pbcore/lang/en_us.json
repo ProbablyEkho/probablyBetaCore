@@ -24,6 +24,7 @@
 
   "item.pbcore.quiver": "Quiver",
   "item.pbcore.fireball": "Fireball",
+  "item.pbcore.jellyfish_spawn_egg": "Jellyfish Spawn Egg",
   "item.pbcore.music_disc_alpha": "Music Disc",
   "item.pbcore.music_disc_dog": "Music Disc",
   "item.pbcore.music_disc_face": "Music Disc",
@@ -40,5 +41,6 @@
   "pbcore.configuration.cobblestone": "Monster Room Main Block",
   "pbcore.configuration.mossy_cobblestone": "Monster Room Secondary Block",
 
-  "entity.pbcore.primed_red": "Primed RED"
+  "entity.pbcore.primed_red": "Primed RED",
+  "entity.pbcore.jellyfish": "Jellyfish"
 }

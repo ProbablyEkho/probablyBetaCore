@@ -1,12 +1,9 @@
 package dev.probablyekho.pbcore.item;
 
-import dev.probablyekho.pbcore.block.BlockRegistry;
+import dev.probablyekho.pbcore.entity.EntityRegistry;
 import dev.probablyekho.pbcore.probablyBetaCore;
 import dev.probablyekho.pbcore.sound.SoundRegistry;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -31,6 +28,8 @@ public class ItemRegistry {
             () -> new FireballItem(new Item.Properties()));
     public static final DeferredItem<Item> QUIVER = ITEMS.register("quiver",
             () -> new QuiverItem(ArmorMaterialRegistry.QUIVER, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(512)));
+    public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG = ITEMS.register("jellyfish_spawn_egg",
+            () -> new SpawnEggItem(EntityRegistry.JELLYFISH.get(), 11094432, 16771839, new Item.Properties()));
 
 	public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
