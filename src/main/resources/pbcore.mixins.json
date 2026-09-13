@@ -13,7 +13,6 @@
     "CatMixin",
     "CaveSoundManagerMixin",
     "CreeperMixin",
-    "EnderManMixin",
     "EntityMixin",
     "ExplosionMixin",
     "FallingBlockEntityMixin",
