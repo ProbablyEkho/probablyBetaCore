@@ -37,6 +37,7 @@
     "requireAnnotations": true
   },
   "client": [
+    "CapeLayerMixin",
     "ChatComponentMixin",
     "ChatScreenMixin",
     "GlowingNametagMixin",
