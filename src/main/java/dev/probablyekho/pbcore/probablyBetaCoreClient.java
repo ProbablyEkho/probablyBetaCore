@@ -6,7 +6,6 @@ import dev.probablyekho.pbcore.client.Tinting;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.PlayerModel;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -68,7 +67,7 @@ public class probablyBetaCoreClient {
             playerModel.rightPants.visible = false;
             playerModel.head.visible = true;
             playerModel.hat.visible = true;
-            event.getPoseStack().translate(0, -0.125, 0);
+            event.getPoseStack().translate(0, -0.0625, 0);
         }
     }
 }
