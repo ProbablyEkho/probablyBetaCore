@@ -100,7 +100,7 @@ public class probablyBetaCore {
         event.put(EntityRegistry.JELLYFISH.get(), Jellyfish.createAttributes().build());
     }
     public void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
-        event.register(EntityRegistry.JELLYFISH.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Jellyfish::checkJellyfishSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityRegistry.JELLYFISH.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Jellyfish::checkJellyfishSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
     @SubscribeEvent

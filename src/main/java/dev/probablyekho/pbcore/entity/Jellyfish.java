@@ -92,7 +92,7 @@ public class Jellyfish extends Mob {
     }
 
     public static boolean checkJellyfishSpawnRules(EntityType<Jellyfish> jellyfish, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return pos.getY() >= 96 && level.canSeeSky(pos) && level.getMoonPhase() == 4 && Monster.isDarkEnoughToSpawn((ServerLevelAccessor) level, pos, random);
+        return level.canSeeSky(pos) && level.getMoonPhase() == 4 && Monster.isDarkEnoughToSpawn((ServerLevelAccessor) level, pos, random);
     }
 
     @Override
@@ -164,9 +164,9 @@ public class Jellyfish extends Mob {
     }
 
     private void damageNearbyEntities() {
-        for (LivingEntity livingEntity : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(0.1D), entity -> entity instanceof Player)) {
-            if (livingEntity.invulnerableTime <= 0) {
-                livingEntity.hurt(this.damageSources().mobAttack(this),2.0F);
+        for (Player player : this.level().getEntitiesOfClass(Player.class, this.getBoundingBox().inflate(0.2D))) {
+            if (player.invulnerableTime <= 0) {
+                player.hurt(this.damageSources().mobAttack(this),2.0F);
             }
         }
     }
@@ -179,8 +179,11 @@ public class Jellyfish extends Mob {
         if (super.hurt(source, amount) && this.getLastHurtByMob() != null) {
             if (!this.level().isClientSide) {
                 this.spawnInk();
+                LivingEntity livingEntity = this.getLastHurtByMob();
+                if(livingEntity.invulnerableTime <= 0 && livingEntity instanceof Player) {
+                    livingEntity.hurt(this.damageSources().mobAttack(this), 2.0F);
+                }
             }
-
             return true;
         } else {
             return false;
