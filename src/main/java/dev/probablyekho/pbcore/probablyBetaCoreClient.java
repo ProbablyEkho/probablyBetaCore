@@ -1,5 +1,7 @@
 package dev.probablyekho.pbcore;
 
+import dev.probablyekho.pbcore.block.BlockRegistry;
+import dev.probablyekho.pbcore.client.GhostPumpkinOverlay;
 import dev.probablyekho.pbcore.client.JellyfishRenderer;
 import dev.probablyekho.pbcore.client.RedRenderer;
 import dev.probablyekho.pbcore.client.Tinting;
@@ -15,6 +17,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RenderPlayerEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -70,4 +73,9 @@ public class probablyBetaCoreClient {
             event.getPoseStack().translate(0, -0.0625, 0);
         }
     }
+    @SubscribeEvent
+    public static void ghostPumpkinBlur(RegisterClientExtensionsEvent event) {
+        event.registerItem(new GhostPumpkinOverlay(), BlockRegistry.CARVED_GHOST_PUMPKIN.get().asItem());
+    }
+
 }

@@ -56,7 +56,7 @@ public class BlockRegistry {
             () -> new GhostPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.DIDGERIDOO).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> CARVED_GHOST_PUMPKIN = registerBlock(
             "carved_ghost_pumpkin",
-            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).isValidSpawn(Blocks::always).pushReaction(PushReaction.DESTROY)));
+            () -> new EquipableCarvedPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).isValidSpawn(Blocks::always).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> WILL_O_WISP = registerBlock(
             "will_o_wisp",
             () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).lightLevel(p_187437_ -> 15).isValidSpawn(Blocks::always).pushReaction(PushReaction.DESTROY)));
