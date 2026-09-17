@@ -1,9 +1,15 @@
 {
   "block.pbcore.bush": "Shrub",
+  "block.pbcore.gourd": "Gourd",
+  "block.pbcore.ghost_gourd": "Ghost Gourd",
   "block.pbcore.obsidian": "Obsidian",
   "block.pbcore.glowing_obsidian": "Magmatic Obsidian",
   "block.pbcore.nether_sulphur_ore": "Nether Sulphur Ore",
   "block.pbcore.red": "RED",
+
+  "block.pbcore.ghost_pumpkin": "Ghost Pumpkin",
+  "block.pbcore.carved_ghost_pumpkin": "Carved Ghost Pumpkin",
+  "block.pbcore.will_o_wisp": "Will o'Wisp",
 
   "block.pbcore.black_lamp": "Black Lamp",
   "block.pbcore.gray_lamp": "Gray Lamp",

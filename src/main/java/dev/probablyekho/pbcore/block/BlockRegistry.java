@@ -32,6 +32,12 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> BUSH = registerBlock(
             "bush",
             () -> new ShrubBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> GOURD = registerBlock(
+            "gourd",
+            () -> new GourdBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> GHOST_GOURD = registerBlock(
+            "ghost_gourd",
+            () -> new GourdBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
 	public static final DeferredBlock<Block> OBSIDIAN = registerBlock(
             "obsidian",
             () -> new ObsidianBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(40.0F, 1200.0F).randomTicks().pushReaction(PushReaction.BLOCK)));
@@ -44,6 +50,16 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> RED = registerBlock(
             "red",
             () -> new RedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).instabreak().sound(SoundType.GRASS).ignitedByLava().isRedstoneConductor(BlockRegistry::never)));
+
+    public static final DeferredBlock<Block> GHOST_PUMPKIN = registerBlock(
+            "ghost_pumpkin",
+            () -> new GhostPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.DIDGERIDOO).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> CARVED_GHOST_PUMPKIN = registerBlock(
+            "carved_ghost_pumpkin",
+            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).isValidSpawn(Blocks::always).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> WILL_O_WISP = registerBlock(
+            "will_o_wisp",
+            () -> new CarvedPumpkinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(1.0F).sound(SoundType.WOOD).lightLevel(p_187437_ -> 15).isValidSpawn(Blocks::always).pushReaction(PushReaction.DESTROY)));
 
     public static final DeferredBlock<Block> WHITE_LAMP = registerBlock("white_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));
     public static final DeferredBlock<Block> LIGHT_GRAY_LAMP = registerBlock("light_gray_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));

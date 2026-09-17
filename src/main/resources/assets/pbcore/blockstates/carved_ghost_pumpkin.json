@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pbcore:block/carved_ghost_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pbcore:block/carved_ghost_pumpkin"
+    },
+    "facing=south": {
+      "model": "pbcore:block/carved_ghost_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pbcore:block/carved_ghost_pumpkin",
+      "y": 270
+    }
+  }
+}

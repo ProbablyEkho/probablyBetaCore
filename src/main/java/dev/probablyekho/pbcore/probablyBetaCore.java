@@ -149,6 +149,11 @@ public class probablyBetaCore {
 			event.accept(BlockRegistry.GLOWING_OBSIDIAN);
 			event.accept(BlockRegistry.NETHER_SULPHUR_ORE);
 			event.accept(BlockRegistry.RED);
+			event.accept(BlockRegistry.GHOST_PUMPKIN);
+			event.accept(BlockRegistry.CARVED_GHOST_PUMPKIN);
+			event.accept(BlockRegistry.WILL_O_WISP);
+			event.accept(BlockRegistry.GOURD);
+			event.accept(BlockRegistry.GHOST_GOURD);
 		}
 		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			event.accept(ItemRegistry.MUSIC_DISC_ALPHA);
