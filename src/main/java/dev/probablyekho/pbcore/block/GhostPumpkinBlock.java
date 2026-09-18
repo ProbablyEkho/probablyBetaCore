@@ -45,7 +45,7 @@ public class GhostPumpkinBlock extends Block {
                 (double)blockPos.getX() + 0.5 + (double)direction1.getStepX() * 0.65,
                 (double)blockPos.getY() + 0.1,
                 (double)blockPos.getZ() + 0.5 + (double)direction1.getStepZ() * 0.65,
-                new ItemStack(Items.PUMPKIN_SEEDS, 4)
+                new ItemStack(BlockRegistry.GOURD_CROP.asItem(), 4)
             );
             itementity.setDeltaMovement(
                 0.05 * (double)direction1.getStepX() + level.random.nextDouble() * 0.02,

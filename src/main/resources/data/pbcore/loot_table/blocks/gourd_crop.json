@@ -1,0 +1,73 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pbcore:gourd",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "pbcore:gourd_crop",
+              "properties": {
+                "age": "3"
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [],
+          "name": "pbcore:gourd_crop"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pbcore:gourd_crop",
+          "conditions": [],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "pbcore:gourd_crop",
+          "properties": {
+            "age": "3"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "pbcore:blocks/gourd_crop"
+}

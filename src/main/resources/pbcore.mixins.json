@@ -24,6 +24,7 @@
     "NetherSproutsBlockMixin",
     "NoteBlockMixin",
     "PrimedTntMixin",
+    "PumpkinBlockMixin",
     "SlimeMixin",
     "SpiderMixin",
     "TreeGrowerMixin",

@@ -10,6 +10,7 @@
   "block.pbcore.ghost_pumpkin": "Ghost Pumpkin",
   "block.pbcore.carved_ghost_pumpkin": "Carved Ghost Pumpkin",
   "block.pbcore.will_o_wisp": "Will o'Wisp",
+  "block.pbcore.gourd_crop": "Gourd Seeds",
 
   "block.pbcore.black_lamp": "Black Lamp",
   "block.pbcore.gray_lamp": "Gray Lamp",
@@ -31,6 +32,7 @@
   "item.pbcore.quiver": "Quiver",
   "item.pbcore.fireball": "Fireball",
   "item.pbcore.jellyfish_spawn_egg": "Jellyfish Spawn Egg",
+  "item.pbcore.gourd_seeds": "Gourd Seeds",
   "item.pbcore.music_disc_alpha": "Music Disc",
   "item.pbcore.music_disc_dog": "Music Disc",
   "item.pbcore.music_disc_face": "Music Disc",

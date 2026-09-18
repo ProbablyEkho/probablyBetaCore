@@ -1,7 +1,7 @@
 {
   "render_type": "cutout_mipped",
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "pbcore:block/gourd_stage0"
+    "cross": "pbcore:block/gourd_stage0"
   }
 }

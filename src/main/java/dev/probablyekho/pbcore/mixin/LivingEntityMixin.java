@@ -1,5 +1,6 @@
 package dev.probablyekho.pbcore.mixin;
 
+import dev.probablyekho.pbcore.block.BlockRegistry;
 import dev.probablyekho.pbcore.probablyBetaCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -41,9 +42,9 @@ public abstract class LivingEntityMixin {
 
     @Inject(method = "getVisibilityPercent", at = @At("RETURN"), cancellable = true)
     private void pumpStealth(Entity lookingEntity, CallbackInfoReturnable<Double> cir) {
-        if (lookingEntity != null) {
+        if(lookingEntity != null) {
             ItemStack itemStack = entity.getItemBySlot(EquipmentSlot.HEAD);
-            if (itemStack.is(Items.CARVED_PUMPKIN)) {
+            if((itemStack.is(Items.CARVED_PUMPKIN)) || (itemStack.is(BlockRegistry.CARVED_GHOST_PUMPKIN.asItem()))) {
                 cir.setReturnValue(cir.getReturnValue() * 0.375);
             }
         }
