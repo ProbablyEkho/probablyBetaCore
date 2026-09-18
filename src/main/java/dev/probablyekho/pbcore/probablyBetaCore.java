@@ -154,6 +154,7 @@ public class probablyBetaCore {
 			event.accept(BlockRegistry.WILL_O_WISP);
 			event.accept(BlockRegistry.GOURD);
 			event.accept(BlockRegistry.GHOST_GOURD);
+			event.accept(BlockRegistry.GOURD_CROP);
 		}
 		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			event.accept(ItemRegistry.MUSIC_DISC_ALPHA);
