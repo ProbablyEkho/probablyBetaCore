@@ -1,5 +1,9 @@
 {
   "block.pbcore.bush": "Shrub",
+  "block.pbcore.rose_flowerbed": "Rose Flowerbed",
+  "block.pbcore.dandelion_flowerbed": "Dandelion Flowerbed",
+  "block.pbcore.iris_flowerbed": "Iris Flowerbed",
+  "block.pbcore.chair": "Chair",
   "block.pbcore.gourd": "Gourd",
   "block.pbcore.ghost_gourd": "Ghost Gourd",
   "block.pbcore.obsidian": "Obsidian",

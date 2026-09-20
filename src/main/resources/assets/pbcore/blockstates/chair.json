@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pbcore:block/chair"
+    },
+    "facing=north": {
+      "model": "pbcore:block/chair",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "pbcore:block/chair",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "pbcore:block/chair",
+      "y": 180
+    }
+  }
+}

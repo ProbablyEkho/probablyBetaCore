@@ -8,6 +8,7 @@ import dev.probablyekho.pbcore.item.ArmorMaterialRegistry;
 import dev.probablyekho.pbcore.item.ItemRegistry;
 import dev.probablyekho.pbcore.item.QuiverItem;
 import dev.probablyekho.pbcore.sound.SoundRegistry;
+import dev.probablyekho.pbcore.worldgen.FeatureRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
@@ -28,6 +29,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.item.ItemTossEvent;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
@@ -71,6 +73,7 @@ public class probablyBetaCore {
         EntityRegistry.register(modEventBus);
         ArmorMaterialRegistry.register(modEventBus);
         SoundRegistry.register(modEventBus);
+        FeatureRegistry.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -136,6 +139,11 @@ public class probablyBetaCore {
         livingEntity.playSound(soundtype.getStepSound(), (float) (0.6 + (Math.random() + (Math.random() * 0.6))), (float) (0.8 + (Math.random() * 0.4)));
     }
     @SubscribeEvent
+    public void itemDropSound(ItemTossEvent event) {
+        ItemEntity itemEntity = event.getEntity();
+        itemEntity.level().playSound(null, itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((itemEntity.level().random.nextFloat() - itemEntity.level().random.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+    }
+    @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
         if(event.getState().is(Blocks.SEAGRASS)) {
             event.setCanceled(true);
@@ -143,8 +151,14 @@ public class probablyBetaCore {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+		if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			event.accept(BlockRegistry.CHAIR);
+		}
 		if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			event.accept(BlockRegistry.BUSH);
+			event.accept(BlockRegistry.ROSE_FLOWERBED);
+			event.accept(BlockRegistry.DANDELION_FLOWERBED);
+			event.accept(BlockRegistry.IRIS_FLOWERBED);
 			event.accept(BlockRegistry.OBSIDIAN);
 			event.accept(BlockRegistry.GLOWING_OBSIDIAN);
 			event.accept(BlockRegistry.NETHER_SULPHUR_ORE);

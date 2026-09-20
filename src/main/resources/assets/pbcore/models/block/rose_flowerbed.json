@@ -1,0 +1,7 @@
+{
+  "render_type": "cutout_mipped",
+  "parent": "pbcore:block/crop_farmlandless",
+  "textures": {
+    "crop": "pbcore:block/rose_flowerbed"
+  }
+}

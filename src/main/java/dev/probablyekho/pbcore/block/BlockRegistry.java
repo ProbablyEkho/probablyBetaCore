@@ -32,6 +32,18 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> BUSH = registerBlock(
             "bush",
             () -> new ShrubBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> ROSE_FLOWERBED = registerBlock(
+            "rose_flowerbed",
+            () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> DANDELION_FLOWERBED = registerBlock(
+            "dandelion_flowerbed",
+            () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> IRIS_FLOWERBED = registerBlock(
+            "iris_flowerbed",
+            () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> CHAIR = registerBlock(
+            "chair",
+            () -> new ChairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noOcclusion().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> GOURD = registerBlock(
             "gourd",
             () -> new GourdBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
