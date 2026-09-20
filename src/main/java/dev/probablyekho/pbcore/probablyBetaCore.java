@@ -15,22 +15,18 @@ import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.item.ItemTossEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
@@ -139,6 +135,15 @@ public class probablyBetaCore {
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
         if(event.getState().is(Blocks.SEAGRASS)) {
+            event.setCanceled(true);
+        }
+    }
+    @SubscribeEvent
+    public void mudFromTrampling(BlockEvent.FarmlandTrampleEvent event) {
+        BlockPos blockPos = event.getPos();
+        Level level = event.getEntity().level();
+        if(level.getBlockState(blockPos).getValue(FarmBlock.MOISTURE) == 7) {
+            level.setBlock(blockPos, Blocks.MUD.defaultBlockState(), Block.UPDATE_ALL);
             event.setCanceled(true);
         }
     }
