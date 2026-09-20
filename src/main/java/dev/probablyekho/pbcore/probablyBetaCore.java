@@ -132,16 +132,9 @@ public class probablyBetaCore {
         }
     }
     @SubscribeEvent
-    public void jumpSound(LivingEvent.LivingJumpEvent event) {
-        LivingEntity livingEntity = event.getEntity();
-        BlockPos blockPos = livingEntity.blockPosition().below();
-        SoundType soundtype = livingEntity.level().getBlockState(blockPos).getSoundType(livingEntity.level(), blockPos, livingEntity);
-        livingEntity.playSound(soundtype.getStepSound(), (float) (0.6 + (Math.random() + (Math.random() * 0.6))), (float) (0.8 + (Math.random() * 0.4)));
-    }
-    @SubscribeEvent
     public void itemDropSound(ItemTossEvent event) {
         ItemEntity itemEntity = event.getEntity();
-        itemEntity.level().playSound(null, itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((itemEntity.level().random.nextFloat() - itemEntity.level().random.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+        itemEntity.level().playSound(null, itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((itemEntity.level().random.nextFloat() - itemEntity.level().random.nextFloat()) * 0.35F + 0.75F));
     }
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
