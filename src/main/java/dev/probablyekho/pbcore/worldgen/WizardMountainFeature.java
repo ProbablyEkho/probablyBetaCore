@@ -168,13 +168,17 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
                     int newY = j + HEIGHT;
                     BlockPos blockPos = new BlockPos(square.x, j, square.z);
                     if(newY > level.getMaxBuildHeight()) {
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
                         continue;
                     }
                     BlockState blockState = level.getBlockState(blockPos);
                     if(blockState.getPistonPushReaction() != PushReaction.BLOCK) {
-                        level.setBlock(new BlockPos(square.x, newY, square.z), blockState, 2);
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                        BlockPos newBlockPos = new BlockPos(square.x, newY, square.z);
+                        level.setBlock(newBlockPos, blockState, 2);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
+                        if(!blockState.getFluidState().isEmpty()) {
+                            level.scheduleTick(newBlockPos, blockState.getFluidState().getType(), blockState.getFluidState().getType().getTickDelay(level));
+                        }
                     }
                 }
             }
