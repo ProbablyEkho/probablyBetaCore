@@ -4,17 +4,15 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import dev.probablyekho.pbcore.entity.Jellyfish;
 import dev.probablyekho.pbcore.probablyBetaCore;
-import net.minecraft.client.model.SquidModel;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
-public class JellyfishRenderer extends MobRenderer<Jellyfish, SquidModel<Jellyfish>> {
+public class JellyfishRenderer extends MobRenderer<Jellyfish, JellyfishModel<Jellyfish>> {
     public JellyfishRenderer(EntityRendererProvider.Context context) {
-        super(context, new SquidModel<>(context.bakeLayer(ModelLayers.SQUID)), 0.7F);
+        super(context, new JellyfishModel<>(context.bakeLayer(probablyBetaCore.JELLYFISH_LAYER)), 0.7F);
     }
     @Override
     protected void setupRotations(Jellyfish entity, PoseStack poseStack, float bob, float yBodyRot, float partialTick, float scale) {

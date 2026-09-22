@@ -1,10 +1,7 @@
 package dev.probablyekho.pbcore;
 
 import dev.probablyekho.pbcore.block.BlockRegistry;
-import dev.probablyekho.pbcore.client.GhostPumpkinOverlay;
-import dev.probablyekho.pbcore.client.JellyfishRenderer;
-import dev.probablyekho.pbcore.client.RedRenderer;
-import dev.probablyekho.pbcore.client.Tinting;
+import dev.probablyekho.pbcore.client.*;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.PlayerModel;
@@ -53,6 +50,10 @@ public class probablyBetaCoreClient {
             EntityRegistry.JELLYFISH.get(),
             JellyfishRenderer::new
         );
+    }
+    @SubscribeEvent
+    public static void layerRegistry(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(probablyBetaCore.JELLYFISH_LAYER, JellyfishModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void onRenderPlayer(RenderPlayerEvent.Pre event) {

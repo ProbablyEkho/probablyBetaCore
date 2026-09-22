@@ -9,9 +9,11 @@ import dev.probablyekho.pbcore.item.ItemRegistry;
 import dev.probablyekho.pbcore.item.QuiverItem;
 import dev.probablyekho.pbcore.sound.SoundRegistry;
 import dev.probablyekho.pbcore.worldgen.FeatureRegistry;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -50,6 +52,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 public class probablyBetaCore {
     public static final String MODID = "pbcore";
     public static final Logger LOGGER = LogUtils.getLogger();
+
+    public static final ModelLayerLocation JELLYFISH_LAYER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(probablyBetaCore.MODID, "jellyfish"), "main");
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.

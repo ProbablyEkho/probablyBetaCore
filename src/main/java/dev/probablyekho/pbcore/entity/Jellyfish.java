@@ -1,9 +1,7 @@
 package dev.probablyekho.pbcore.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -201,13 +199,7 @@ public class Jellyfish extends Mob {
 
         for (int i = 0; i < 30; i++) {
             Vec3 vec31 = this.rotateVector(new Vec3((double)this.random.nextFloat() * 0.6 - 0.3, -1.0, (double)this.random.nextFloat() * 0.6 - 0.3));
-            Vec3 vec32 = vec31.scale(0.3 + (double)(this.random.nextFloat() * 2.0F));
-            ((ServerLevel)this.level()).sendParticles(this.getInkParticle(), vec3.x, vec3.y + 0.5, vec3.z, 0, vec32.x, vec32.y, vec32.z, 0.1F);
         }
-    }
-
-    protected ParticleOptions getInkParticle() {
-        return ParticleTypes.GLOW_SQUID_INK;
     }
 
     @Override
