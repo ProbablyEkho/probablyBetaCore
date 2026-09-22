@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -167,13 +168,13 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
                     int newY = j + HEIGHT;
                     BlockPos blockPos = new BlockPos(square.x, j, square.z);
                     if(newY > level.getMaxBuildHeight()) {
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
                         continue;
                     }
                     BlockState blockState = level.getBlockState(blockPos);
                     if(blockState.getPistonPushReaction() != PushReaction.BLOCK) {
                         level.setBlock(new BlockPos(square.x, newY, square.z), blockState, 2);
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
                     }
                 }
             }
