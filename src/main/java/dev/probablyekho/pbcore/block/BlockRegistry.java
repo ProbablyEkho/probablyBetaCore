@@ -62,6 +62,9 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> RED = registerBlock(
             "red",
             () -> new RedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).instabreak().sound(SoundType.GRASS).ignitedByLava().isRedstoneConductor(BlockRegistry::never)));
+	public static final DeferredBlock<Block> BONFIRE = registerBlock(
+            "bonfire",
+            () -> new BonfireBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).noCollission().strength(2.0F).sound(SoundType.WOOD).lightLevel((p_152684_) -> 15).noOcclusion().ignitedByLava()));
 
     public static final DeferredBlock<Block> GHOST_PUMPKIN = registerBlock(
             "ghost_pumpkin",

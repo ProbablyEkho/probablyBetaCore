@@ -184,6 +184,9 @@ public class probablyBetaCore {
 		if (event.getTabKey() == CreativeModeTabs.COMBAT) {
 			event.accept(ItemRegistry.QUIVER);
 		}
+		if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+			event.accept(BlockRegistry.BONFIRE);
+		}
 		if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
 			event.accept(BlockRegistry.WHITE_LAMP);
             event.accept(BlockRegistry.LIGHT_GRAY_LAMP);
