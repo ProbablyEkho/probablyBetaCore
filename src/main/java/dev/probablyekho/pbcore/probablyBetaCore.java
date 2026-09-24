@@ -14,6 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -32,6 +33,7 @@ import net.neoforged.neoforge.event.entity.item.ItemTossEvent;
 import net.neoforged.neoforge.event.entity.living.LivingGetProjectileEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
 import net.neoforged.neoforge.event.entity.player.BonemealEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.ExplosionEvent;
 import org.slf4j.Logger;
@@ -135,6 +137,18 @@ public class probablyBetaCore {
     public void itemDropSound(ItemTossEvent event) {
         ItemEntity itemEntity = event.getEntity();
         itemEntity.level().playSound(null, itemEntity.getX(), itemEntity.getY(), itemEntity.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((itemEntity.level().random.nextFloat() - itemEntity.level().random.nextFloat()) * 0.35F + 0.75F));
+    }
+    @SubscribeEvent
+    public void playerLogInSound(PlayerEvent.PlayerLoggedInEvent event) {
+        for(ServerPlayer serverPlayer : event.getEntity().getServer().getPlayerList().getPlayers()) {
+            serverPlayer.playNotifySound(SoundEvents.ENDER_CHEST_OPEN, SoundSource.PLAYERS, 1.0F, 1.0F);
+        }
+    }
+    @SubscribeEvent
+    public void playerLogOutSound(PlayerEvent.PlayerLoggedOutEvent event) {
+        for(ServerPlayer serverPlayer : event.getEntity().getServer().getPlayerList().getPlayers()) {
+            serverPlayer.playNotifySound(SoundEvents.ENDER_CHEST_CLOSE, SoundSource.PLAYERS, 1.0F, 1.0F);
+        }
     }
     @SubscribeEvent
     public void noTallSeagrass(BonemealEvent event) {
