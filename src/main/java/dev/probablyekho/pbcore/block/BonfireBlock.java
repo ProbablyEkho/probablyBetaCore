@@ -33,7 +33,7 @@ public class BonfireBlock extends Block {
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if(random.nextInt(10) == 0) {
-            level.playLocalSound((double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.5F + random.nextFloat(), random.nextFloat() * 0.7F + 0.6F, false
+            level.playLocalSound((double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, SoundEvents.FURNACE_FIRE_CRACKLE, SoundSource.BLOCKS, 0.5F + random.nextFloat(), random.nextFloat() * 0.7F + 0.6F, false
             );
         }
         if(random.nextInt(5) == 0) {
@@ -48,7 +48,7 @@ public class BonfireBlock extends Block {
     @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if(entity instanceof LivingEntity) {
-            entity.hurt(level.damageSources().campfire(), 1);
+            entity.igniteForSeconds(4.0F);
         }
         super.entityInside(state, level, pos, entity);
     }
