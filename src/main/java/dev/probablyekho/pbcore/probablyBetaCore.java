@@ -151,8 +151,8 @@ public class probablyBetaCore {
         }
     }
     @SubscribeEvent
-    public void noTallSeagrass(BonemealEvent event) {
-        if(event.getState().is(Blocks.SEAGRASS)) {
+    public void noTallGrasses(BonemealEvent event) {
+        if(event.getState().is(Blocks.SHORT_GRASS) || event.getState().is(Blocks.FERN) || event.getState().is(Blocks.SEAGRASS)) {
             event.setCanceled(true);
         }
     }
@@ -172,6 +172,7 @@ public class probablyBetaCore {
 		}
 		if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			event.accept(BlockRegistry.BUSH);
+			event.accept(BlockRegistry.OATGRASS);
 			event.accept(BlockRegistry.ROSE_FLOWERBED);
 			event.accept(BlockRegistry.DANDELION_FLOWERBED);
 			event.accept(BlockRegistry.IRIS_FLOWERBED);

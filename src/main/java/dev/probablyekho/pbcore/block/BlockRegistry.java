@@ -32,6 +32,9 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> BUSH = registerBlock(
             "bush",
             () -> new ShrubBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+	public static final DeferredBlock<Block> OATGRASS = registerBlock(
+            "oatgrass",
+            () -> new ShrubBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	public static final DeferredBlock<Block> ROSE_FLOWERBED = registerBlock(
             "rose_flowerbed",
             () -> new FlowerbedBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));

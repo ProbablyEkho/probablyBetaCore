@@ -15,7 +15,7 @@ public class Tinting {
         event.register((state, level, pos, tint) -> level != null && pos != null
                     ? BiomeColors.getAverageGrassColor(level, pos)
                     : GrassColor.getDefaultColor(),
-                BlockRegistry.BUSH.get()
+                BlockRegistry.BUSH.get(), BlockRegistry.OATGRASS.get()
         );
     }
 
@@ -24,6 +24,7 @@ public class Tinting {
             BlockState blockstate = ((BlockItem)stack.getItem()).getBlock().defaultBlockState();
             return event.getBlockColors().getColor(blockstate, null, null, tint);
         },
-        BlockRegistry.BUSH.get());
+        BlockRegistry.BUSH.get(), BlockRegistry.OATGRASS.get()
+        );
     }
 }
