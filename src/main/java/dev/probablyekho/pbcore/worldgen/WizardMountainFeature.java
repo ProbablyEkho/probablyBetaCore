@@ -5,33 +5,40 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.material.PushReaction;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
-    private static final int RADIUS = 25;
-    private static final int HEIGHT = 30;
-    private static final double DEPTH_SCALE = 2.5;
-    private static final int MAX_VERTICAL_GAP = 4;
-    private static final int DEPTH_OFFSET = 2;
-    public WizardMountainFeature(Codec<NoneFeatureConfiguration> codec) {
+public class WizardMountainFeature extends Feature<WizardMountainConfig> {
+    public WizardMountainFeature(Codec<WizardMountainConfig> codec) {
         super(codec);
     }
     @Override
-    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-        FlyingMountain flyingMountain = new FlyingMountain(context.level(), context.random(), context.origin().getX(), context.origin().getZ());
+    public boolean place(FeaturePlaceContext<WizardMountainConfig> context) {
+        RandomSource randomSource = context.random();
+        WizardMountainConfig config = context.config();
+        int radius = config.radius.sample(randomSource);
+        FlyingMountain flyingMountain = new FlyingMountain(
+                context.level(),
+                randomSource,
+                context.origin().getX(),
+                context.origin().getZ(),
+                radius,
+                config.height.sample(randomSource),
+                config.depthScale.sample(randomSource),
+                config.maxVerticalGap.sample(randomSource),
+                config.depthOffset.sample(randomSource)
+
+        );
         flyingMountain.originSquare();
-        for(int i = 0; i < RADIUS; i++) {
+        for(int i = 0; i < radius; i++) {
             flyingMountain.growAll();
         }
         return flyingMountain.create();
@@ -72,14 +79,24 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
         public final RandomSource randomSource;
         public final int originX;
         public final int originZ;
+        private final int radius;
+        private final int height;
+        private final float depthScale;
+        private final int maxVerticalGap;
+        private final int depthOffset;
         public final Map<Long, Square> interior = new HashMap<>();
         public final Map<Long, Square> outside = new HashMap<>();
         public Square origin;
-        private FlyingMountain(WorldGenLevel level, RandomSource randomSource, int originX, int originZ) {
+        private FlyingMountain(WorldGenLevel level, RandomSource randomSource, int originX, int originZ, int radius, int height, float depthScale, int maxVerticalGap, int depthOffset) {
             this.level = level;
             this.randomSource = randomSource;
             this.originX = originX;
             this.originZ = originZ;
+            this.radius = radius;
+            this.height = height;
+            this.depthScale = depthScale;
+            this.maxVerticalGap = maxVerticalGap;
+            this.depthOffset = depthOffset;
         }
         private void originSquare() {
             long squareKey = key(originX, originZ);
@@ -123,10 +140,10 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
                 double addedGrowth;
                 if(heightDiff == 0) {
                     addedGrowth = 0.4714;
-                } else if(heightDiff > MAX_VERTICAL_GAP) {
+                } else if(heightDiff > maxVerticalGap) {
                     addedGrowth = 0;
                 } else {
-                    addedGrowth = (1 + MAX_VERTICAL_GAP - heightDiff) / (1 + MAX_VERTICAL_GAP * 4.5);
+                    addedGrowth = (1 + maxVerticalGap - heightDiff) / (1 + maxVerticalGap * 4.5);
                 }
                 if(x != curX && z != curZ) {
                     addedGrowth /= 1.41421;
@@ -135,7 +152,7 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
         private void growSquare(Square square) {
-            if(square.grow() && square.radius <= RADIUS) {
+            if(square.grow() && square.radius <= radius) {
                 long squareKey = key(square.x, square.z);
                 interior.put(squareKey, square);
                 outside.remove(squareKey);
@@ -154,21 +171,20 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
             if(interior.isEmpty()) {
                 return false;
             }
-            double depthScale = 6 / origin.weight;
             for(Square square : interior.values()) {
                 int y = square.y;
-                int thisDepth = (int) (DEPTH_SCALE * ((depthScale * square.weight * (RADIUS - square.radius)/RADIUS ) +0.1 + randomSource.nextDouble() * 3));
-                thisDepth += 2 + DEPTH_OFFSET;
+                int thisDepth = (int) (depthScale * (((6 / origin.weight) * square.weight * (radius - square.radius)/radius ) +0.1 + randomSource.nextDouble() * 3));
+                thisDepth += 2 + depthOffset;
                 int startY = y - thisDepth;
                 if(startY < level.getMinBuildHeight()) {
                     startY = level.getMinBuildHeight();
                 }
                 int endY = level.getHeight(Heightmap.Types.WORLD_SURFACE, square.x, square.z);
                 for(int j = endY; j > startY; j--) {
-                    int newY = j + HEIGHT;
+                    int newY = j + height;
                     BlockPos blockPos = new BlockPos(square.x, j, square.z);
                     if(newY > level.getMaxBuildHeight()) {
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
                         continue;
                     }
                     BlockState blockState = level.getBlockState(blockPos);
@@ -177,8 +193,8 @@ public class WizardMountainFeature extends Feature<NoneFeatureConfiguration> {
                             blockState = Blocks.COBBLESTONE.defaultBlockState();
                         }
                         BlockPos newBlockPos = new BlockPos(square.x, newY, square.z);
-                        level.setBlock(newBlockPos, blockState, Block.UPDATE_ALL);
-                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                        level.setBlock(newBlockPos, blockState, 2);
+                        level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
                         if(!blockState.getFluidState().isEmpty()) {
                             level.scheduleTick(newBlockPos, blockState.getFluidState().getType(), blockState.getFluidState().getType().getTickDelay(level));
                         }

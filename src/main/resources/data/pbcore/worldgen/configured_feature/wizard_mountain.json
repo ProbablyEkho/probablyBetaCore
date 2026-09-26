@@ -1,4 +1,22 @@
 {
   "type": "pbcore:wizard_mountain",
-  "config": {}
+  "config": {
+    "radius": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 10,
+      "max_inclusive": 50
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 25,
+      "max_inclusive": 50
+    },
+    "depthScale": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 1.5,
+      "max_exclusive": 3.5
+    },
+    "maxVerticalGap": 4,
+    "depthOffset": 2
+  }
 }
