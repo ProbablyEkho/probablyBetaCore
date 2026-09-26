@@ -189,9 +189,6 @@ public class WizardMountainFeature extends Feature<WizardMountainConfig> {
                     }
                     BlockState blockState = level.getBlockState(blockPos);
                     if(blockState.getPistonPushReaction() != PushReaction.BLOCK) {
-                        if(j == startY + 1) {
-                            blockState = Blocks.COBBLESTONE.defaultBlockState();
-                        }
                         BlockPos newBlockPos = new BlockPos(square.x, newY, square.z);
                         level.setBlock(newBlockPos, blockState, 2);
                         level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 2);
