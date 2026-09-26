@@ -3,8 +3,8 @@
   "config": {
     "radius": {
       "type": "minecraft:uniform",
-      "min_inclusive": 10,
-      "max_inclusive": 50
+      "min_inclusive": 20,
+      "max_inclusive": 80
     },
     "height": {
       "type": "minecraft:uniform",
