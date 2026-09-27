@@ -8,7 +8,6 @@
   "mixins": [
     "BedBlockMixin",
     "BlockColorsMixin",
-    "BoatMixin",
     "CarpetBlockMixin",
     "CarvedPumpkinBlockMixin",
     "CatMixin",
