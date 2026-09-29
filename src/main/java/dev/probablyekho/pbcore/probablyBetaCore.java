@@ -20,6 +20,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -127,9 +128,9 @@ public class probablyBetaCore {
     }
     @SubscribeEvent
     public void quiverArrowLose(ArrowLooseEvent event) {
-        if (event.getEntity().level().isClientSide()) return;
+        if(event.getEntity().level().isClientSide()) return;
         ItemStack itemStack = event.getEntity().getItemBySlot(EquipmentSlot.CHEST);
-        if(itemStack.getItem() instanceof QuiverItem && QuiverItem.hasArrows(itemStack)) {
+        if(BowItem.getPowerForTime(event.getCharge()) >= 0.1F && itemStack.getItem() instanceof QuiverItem && QuiverItem.hasArrows(itemStack)) {
             QuiverItem.consumeArrow(itemStack);
         }
     }
