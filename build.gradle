@@ -130,9 +130,10 @@ configurations {
 }
 
 dependencies {
-    implementation "maven.modrinth:xkrdwmh2:BeKW6EeH"
-    implementation "maven.modrinth:l1rj36Ob:POrRfSqe"
-    implementation "maven.modrinth:MVARlG2f:9GjNW2Gf"
+    implementation "maven.modrinth:xkrdwmh2:BeKW6EeH" // Moderner Beta
+    implementation "maven.modrinth:l1rj36Ob:POrRfSqe" // Nostalgic Tweaks
+    implementation "maven.modrinth:MVARlG2f:9GjNW2Gf" // Zeta
+    implementation "maven.modrinth:7nEkcq0F:eW0CuJzM" // Creature Feature
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
