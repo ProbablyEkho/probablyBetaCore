@@ -18,9 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ItemMixin {
     @Inject(method = "overrideOtherStackedOnMe", at = @At("HEAD"), cancellable = true)
     private void lapisRepair(ItemStack stack, ItemStack other, Slot slot, ClickAction action, Player player, SlotAccess access, CallbackInfoReturnable<Boolean> cir) {
-        if(action != ClickAction.SECONDARY || !other.is(Items.LAPIS_LAZULI) || stack.is(ItemRegistry.QUIVER)) return;
+        if(action != ClickAction.SECONDARY || !other.is(Items.LAPIS_LAZULI) || stack.is(ItemRegistry.QUIVER)) {
+            return;
+        }
         if(!stack.isDamageableItem() || !stack.isDamaged()) {
-            cir.setReturnValue(true);
             return;
         }
         stack.setDamageValue(Math.max(0, stack.getDamageValue() - 64));

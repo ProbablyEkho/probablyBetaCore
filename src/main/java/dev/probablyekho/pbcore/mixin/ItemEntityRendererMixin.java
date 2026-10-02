@@ -19,7 +19,7 @@ public abstract class ItemEntityRendererMixin {
     )
 
     private Quaternionf setFullItemRotation(Quaternionf quaternion, ItemEntity entity) {
-        if (!(Boolean)CandyTweak.OLD_2D_ITEMS.get()) {
+        if (CandyTweak.OLD_2D_ITEMS.get()) {
             var camera = Minecraft.getInstance().gameRenderer.getMainCamera();
 
             boolean isModelFlat = GameUtil.isModelFlat(entity.getItem());
