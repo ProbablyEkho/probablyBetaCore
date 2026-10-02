@@ -17,6 +17,7 @@ public class CoatOfArmsEntityMixin {
     private void centeredBullets(Args args) {
         args.set(0, coatOfArms.getPosition(1.0F).add((Math.random() - (double)0.5F) / (double)4.0F, 1.0F + ((Math.random() - (double)0.5F) / (double)4.0F), (Math.random() - (double)0.5F) / (double)4.0F));
     }
+    /*
     @Inject(method = "tick", at = @At("TAIL"))
     private void backAwayFromTarget(CallbackInfo ci) {
         if(!coatOfArms.level().isClientSide() && coatOfArms.getTarget() != null) {
@@ -29,4 +30,5 @@ public class CoatOfArmsEntityMixin {
             }
         }
     }
+    */
 }
