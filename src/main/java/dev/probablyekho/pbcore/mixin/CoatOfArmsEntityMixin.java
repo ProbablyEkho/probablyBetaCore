@@ -15,7 +15,7 @@ public class CoatOfArmsEntityMixin {
     @Unique CoatOfArmsEntity coatOfArms = (CoatOfArmsEntity)(Object)this;
     @ModifyArgs(method = "tick", at = @At(value = "INVOKE", target = "Lnet/atired/creaturefeature/entity/BulletEntity;setPos(Lnet/minecraft/world/phys/Vec3;)V"))
     private void centeredBullets(Args args) {
-        args.set(0, coatOfArms.getPosition(1.0F).add((Math.random() - (double)0.5F) / (double)4.0F, 1.0F + ((Math.random() - (double)0.5F) / (double)4.0F), (Math.random() - (double)0.5F) / (double)4.0F));
+        args.set(0, coatOfArms.getPosition(1.0F).add((Math.random() - (double)0.5F) / (double)8.0F, 0.8F + ((Math.random() - (double)0.5F) / (double)8.0F), (Math.random() - (double)0.5F) / (double)8.0F));
     }
     /*
     @Inject(method = "tick", at = @At("TAIL"))
