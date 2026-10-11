@@ -130,6 +130,7 @@ configurations {
 }
 
 dependencies {
+    implementation "maven.modrinth:AANobbMI:Pb3OXVqC" // Sodium
     implementation "maven.modrinth:xkrdwmh2:BeKW6EeH" // Moderner Beta
     implementation "maven.modrinth:l1rj36Ob:POrRfSqe" // Nostalgic Tweaks
     implementation "maven.modrinth:MVARlG2f:9GjNW2Gf" // Zeta

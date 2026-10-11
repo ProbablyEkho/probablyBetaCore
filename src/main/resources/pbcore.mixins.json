@@ -6,6 +6,7 @@
     "minVersion": "0.5.3"
   },
   "mixins": [
+    "BaseSpawnerMixin",
     "BedBlockMixin",
     "BlockColorsMixin",
     "CarapaceBlockMixin",
@@ -28,6 +29,7 @@
     "PrimedTntMixin",
     "PumpkinBlockMixin",
     "SlimeMixin",
+    "SmoothLightPipelineMixin",
     "SpiderMixin",
     "TreeGrowerMixin",
     "ZetaPistonStructureResolverMixin"
