@@ -49,6 +49,7 @@
     "HumanoidArmorLayerMixin",
     "ItemEntityRendererMixin",
     "ItemFrameRendererMixin",
+    "LevelRendererMixin",
     "LivingEntityRendererMixin",
     "LocalPlayerMixin",
     "SimpleSoundInstanceMixin"
