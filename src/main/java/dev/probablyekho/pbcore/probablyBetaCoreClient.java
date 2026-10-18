@@ -3,17 +3,13 @@ package dev.probablyekho.pbcore;
 import dev.probablyekho.pbcore.block.BlockRegistry;
 import dev.probablyekho.pbcore.client.*;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.PlayerModel;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RenderPlayerEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
@@ -34,13 +30,6 @@ public class probablyBetaCoreClient {
     }
 
     @SubscribeEvent
-    static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        probablyBetaCore.LOGGER.info("HELLO FROM CLIENT SETUP");
-        probablyBetaCore.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-    }
-
-    @SubscribeEvent
     static void rendererRegistry(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(
             EntityRegistry.PRIMED_RED.get(),
@@ -54,25 +43,6 @@ public class probablyBetaCoreClient {
     @SubscribeEvent
     public static void layerRegistry(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(probablyBetaCore.JELLYFISH_LAYER, JellyfishModel::createBodyLayer);
-    }
-    @SubscribeEvent
-    public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
-        if (event.getEntity().isSleeping()) {
-            PlayerModel<?> playerModel = event.getRenderer().getModel();
-            playerModel.body.visible = false;
-            playerModel.jacket.visible = false;
-            playerModel.leftArm.visible = false;
-            playerModel.leftSleeve.visible = false;
-            playerModel.rightArm.visible = false;
-            playerModel.rightSleeve.visible = false;
-            playerModel.leftLeg.visible = false;
-            playerModel.leftPants.visible = false;
-            playerModel.rightLeg.visible = false;
-            playerModel.rightPants.visible = false;
-            playerModel.head.visible = true;
-            playerModel.hat.visible = true;
-            event.getPoseStack().translate(0, -0.0625, 0);
-        }
     }
     @SubscribeEvent
     public static void ghostPumpkinBlur(RegisterClientExtensionsEvent event) {

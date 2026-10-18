@@ -46,7 +46,6 @@
     "ChatScreenMixin",
     "GlowingNametagMixin",
     "GuiGraphicsMixin",
-    "HumanoidArmorLayerMixin",
     "ItemEntityRendererMixin",
     "ItemFrameRendererMixin",
     "LevelRendererMixin",
