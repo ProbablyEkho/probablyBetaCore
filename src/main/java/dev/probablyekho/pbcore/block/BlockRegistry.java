@@ -47,6 +47,9 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> CHAIR = registerBlock(
             "chair",
             () -> new ChairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noOcclusion().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+	public static final DeferredBlock<Block> LANTERN = registerBlock(
+            "lantern",
+            () -> new RotatedLanternBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().requiresCorrectToolForDrops().strength(3.5F).lightLevel(p_187433_ -> 15).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> GOURD = registerBlock(
             "gourd",
             () -> new GourdBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(1.0F).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));

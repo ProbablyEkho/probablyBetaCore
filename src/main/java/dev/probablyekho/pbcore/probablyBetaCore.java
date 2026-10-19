@@ -170,6 +170,7 @@ public class probablyBetaCore {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 		if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			event.accept(BlockRegistry.CHAIR);
+			event.accept(BlockRegistry.LANTERN);
 		}
 		if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			event.accept(BlockRegistry.BUSH);

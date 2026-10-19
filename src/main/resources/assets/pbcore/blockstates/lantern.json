@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "hanging=false,rotation=0": {
+      "model": "pbcore:block/lantern"
+    },
+    "hanging=false,rotation=1": {
+      "model": "pbcore:block/lantern_r1"
+    },
+    "hanging=false,rotation=2": {
+      "model": "pbcore:block/lantern_r2"
+    },
+    "hanging=false,rotation=3": {
+      "model": "pbcore:block/lantern_r3"
+    },
+    "hanging=false,rotation=4": {
+      "model": "pbcore:block/lantern"
+    },
+    "hanging=false,rotation=5": {
+      "model": "pbcore:block/lantern_r1"
+    },
+    "hanging=false,rotation=6": {
+      "model": "pbcore:block/lantern_r2"
+    },
+    "hanging=false,rotation=7": {
+      "model": "pbcore:block/lantern_r3"
+    },
+    "hanging=false,rotation=8": {
+      "model": "pbcore:block/lantern"
+    },
+    "hanging=false,rotation=9": {
+      "model": "pbcore:block/lantern_r1"
+    },
+    "hanging=false,rotation=10": {
+      "model": "pbcore:block/lantern_r2"
+    },
+    "hanging=false,rotation=11": {
+      "model": "pbcore:block/lantern_r3"
+    },
+    "hanging=false,rotation=12": {
+      "model": "pbcore:block/lantern"
+    },
+    "hanging=false,rotation=13": {
+      "model": "pbcore:block/lantern_r1"
+    },
+    "hanging=false,rotation=14": {
+      "model": "pbcore:block/lantern_r2"
+    },
+    "hanging=false,rotation=15": {
+      "model": "pbcore:block/lantern_r3"
+    },
+    "hanging=true,rotation=0": {
+      "model": "pbcore:block/lantern_hanging"
+    },
+    "hanging=true,rotation=1": {
+      "model": "pbcore:block/lantern_r1_hanging"
+    },
+    "hanging=true,rotation=2": {
+      "model": "pbcore:block/lantern_r2_hanging"
+    },
+    "hanging=true,rotation=3": {
+      "model": "pbcore:block/lantern_r3_hanging"
+    },
+    "hanging=true,rotation=4": {
+      "model": "pbcore:block/lantern_hanging"
+    },
+    "hanging=true,rotation=5": {
+      "model": "pbcore:block/lantern_r1_hanging"
+    },
+    "hanging=true,rotation=6": {
+      "model": "pbcore:block/lantern_r2_hanging"
+    },
+    "hanging=true,rotation=7": {
+      "model": "pbcore:block/lantern_r3_hanging"
+    },
+    "hanging=true,rotation=8": {
+      "model": "pbcore:block/lantern_hanging"
+    },
+    "hanging=true,rotation=9": {
+      "model": "pbcore:block/lantern_r1_hanging"
+    },
+    "hanging=true,rotation=10": {
+      "model": "pbcore:block/lantern_r2_hanging"
+    },
+    "hanging=true,rotation=11": {
+      "model": "pbcore:block/lantern_r3_hanging"
+    },
+    "hanging=true,rotation=12": {
+      "model": "pbcore:block/lantern_hanging"
+    },
+    "hanging=true,rotation=13": {
+      "model": "pbcore:block/lantern_r1_hanging"
+    },
+    "hanging=true,rotation=14": {
+      "model": "pbcore:block/lantern_r2_hanging"
+    },
+    "hanging=true,rotation=15": {
+      "model": "pbcore:block/lantern_r3_hanging"
+    }
+  }
+}
