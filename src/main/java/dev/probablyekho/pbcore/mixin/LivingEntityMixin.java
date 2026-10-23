@@ -2,6 +2,8 @@ package dev.probablyekho.pbcore.mixin;
 
 import dev.probablyekho.pbcore.block.BlockRegistry;
 import dev.probablyekho.pbcore.probablyBetaCore;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -9,13 +11,16 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -47,6 +52,14 @@ public abstract class LivingEntityMixin {
             if((itemStack.is(Items.CARVED_PUMPKIN)) || (itemStack.is(BlockRegistry.CARVED_GHOST_PUMPKIN.asItem()))) {
                 cir.setReturnValue(cir.getReturnValue() * 0.375);
             }
+        }
+    }
+
+    @Redirect(method = "handleEntityEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;addParticle(Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V"))
+    private void replaceTeleportParticles(Level level, ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+        if((LivingEntity)(Object)this instanceof EnderMan enderMan) {
+            ParticleOptions particle = enderMan.getRandom().nextInt(5) == 0 ? ParticleTypes.SOUL_FIRE_FLAME : ParticleTypes.SMOKE;
+            level.addParticle(particle, x, y, z, 0,  0,  0);
         }
     }
 
