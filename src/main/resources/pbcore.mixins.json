@@ -31,7 +31,6 @@
     "PrimedTntMixin",
     "PumpkinBlockMixin",
     "SlimeMixin",
-    "SmoothLightPipelineMixin",
     "SpiderMixin",
     "TreeGrowerMixin",
     "ZetaPistonStructureResolverMixin"
