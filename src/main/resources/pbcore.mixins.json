@@ -16,6 +16,8 @@
     "CaveSoundManagerMixin",
     "CoatOfArmsEntityMixin",
     "CreeperMixin",
+    "EndermanFreezeWhenLookedAtMixin",
+    "EndermanLookForPlayerGoalMixin",
     "EnderManMixin",
     "EntityMixin",
     "ExplosionMixin",

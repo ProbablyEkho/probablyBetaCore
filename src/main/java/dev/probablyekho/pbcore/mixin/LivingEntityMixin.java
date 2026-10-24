@@ -44,6 +44,18 @@ public abstract class LivingEntityMixin {
             zombieMovementSpeed.addTransientModifier(new AttributeModifier(HP_SPEED_BOOST_ID, bonusHp, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
         }
     }
+    @Inject(method = "setHealth", at = @At("TAIL"))
+    private void endermanSpeedBuffFromHealthLoss(float health, CallbackInfo ci) {
+        if(!(entity instanceof EnderMan enderMan)) return;
+
+        AttributeInstance endermanMovementSpeed = enderMan.getAttribute(Attributes.MOVEMENT_SPEED);
+        if(endermanMovementSpeed == null) return;
+        endermanMovementSpeed.removeModifier(HP_SPEED_BOOST_ID);
+        float bonusHp = 1.0F - (enderMan.getHealth() / enderMan.getMaxHealth());
+        if(bonusHp > 0) {
+            endermanMovementSpeed.addTransientModifier(new AttributeModifier(HP_SPEED_BOOST_ID, bonusHp, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        }
+    }
 
     @Inject(method = "getVisibilityPercent", at = @At("RETURN"), cancellable = true)
     private void pumpStealth(Entity lookingEntity, CallbackInfoReturnable<Double> cir) {
