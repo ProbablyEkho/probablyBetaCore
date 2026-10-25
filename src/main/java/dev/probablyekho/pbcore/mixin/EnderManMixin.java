@@ -34,7 +34,7 @@ public abstract class EnderManMixin extends Monster implements NeutralMob {
      * @reason Expands the enderman stare aggro area
      */
     @Overwrite
-    boolean isLookingAtMe(Player player) {
+    public boolean isLookingAtMe(Player player) {
         ItemStack itemstack = player.getInventory().armor.get(3);
         if (net.neoforged.neoforge.common.CommonHooks.shouldSuppressEnderManAnger((EnderMan)(Object)this, player, itemstack)) {
             return false;
