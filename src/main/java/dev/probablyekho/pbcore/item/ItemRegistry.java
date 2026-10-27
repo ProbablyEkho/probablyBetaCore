@@ -26,6 +26,8 @@ public class ItemRegistry {
 
     public static final DeferredItem<Item> FIREBALL = ITEMS.register("fireball",
             () -> new FireballItem(new Item.Properties()));
+    public static final DeferredItem<Item> MONEY = ITEMS.register("money",
+            () -> new MoneyItem(new Item.Properties()));
     public static final DeferredItem<Item> QUIVER = ITEMS.register("quiver",
             () -> new QuiverItem(ArmorMaterialRegistry.QUIVER, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(512)));
     public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG = ITEMS.register("jellyfish_spawn_egg",

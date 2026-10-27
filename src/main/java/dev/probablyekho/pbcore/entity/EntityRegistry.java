@@ -13,6 +13,7 @@ public class EntityRegistry {
 
     public static final DeferredHolder<EntityType<?>, EntityType<PrimedRed>> PRIMED_RED = ENTITY_TYPE_DEFERRED_REGISTER.register("primed_red", () -> EntityType.Builder.<PrimedRed>of(PrimedRed::new, MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).clientTrackingRange(10).updateInterval(10).build("primed_red"));
     public static final DeferredHolder<EntityType<?>, EntityType<Jellyfish>> JELLYFISH = ENTITY_TYPE_DEFERRED_REGISTER.register("jellyfish", () -> EntityType.Builder.of(Jellyfish::new, MobCategory.AMBIENT).sized(0.8F, 0.8F).eyeHeight(0.4F).clientTrackingRange(8).build("jellyfish"));
+    public static final DeferredHolder<EntityType<?>, EntityType<Money>> MONEY = ENTITY_TYPE_DEFERRED_REGISTER.register("money", () -> EntityType.Builder.<Money>of(Money::new, MobCategory.MISC).fireImmune().sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("money"));
 
     public static void register(IEventBus eventBus) { ENTITY_TYPE_DEFERRED_REGISTER.register(eventBus); }
 }

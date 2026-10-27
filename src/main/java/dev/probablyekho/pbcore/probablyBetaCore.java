@@ -87,6 +87,7 @@ public class probablyBetaCore {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         DispenserBlock.registerProjectileBehavior(ItemRegistry.FIREBALL);
+        DispenserBlock.registerProjectileBehavior(ItemRegistry.MONEY);
         DispenserBlock.registerBehavior(BlockRegistry.RED, new DefaultDispenseItemBehavior() {
             @Override
             protected ItemStack execute(BlockSource blockSource, ItemStack itemStack) {

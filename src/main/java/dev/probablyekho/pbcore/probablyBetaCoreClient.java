@@ -3,6 +3,7 @@ package dev.probablyekho.pbcore;
 import dev.probablyekho.pbcore.block.BlockRegistry;
 import dev.probablyekho.pbcore.client.*;
 import dev.probablyekho.pbcore.entity.EntityRegistry;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -38,6 +39,10 @@ public class probablyBetaCoreClient {
         event.registerEntityRenderer(
             EntityRegistry.JELLYFISH.get(),
             JellyfishRenderer::new
+        );
+        event.registerEntityRenderer(
+            EntityRegistry.MONEY.get(),
+            ThrownItemRenderer::new
         );
     }
     @SubscribeEvent
