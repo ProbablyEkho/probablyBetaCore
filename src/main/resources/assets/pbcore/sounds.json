@@ -46,5 +46,13 @@
                 "stream": true
             }
         ]
+    },
+    "cash": {
+        "sounds": [
+            {
+                "name": "pbcore:sfx/cash",
+                "stream": true
+            }
+        ]
     }
 }

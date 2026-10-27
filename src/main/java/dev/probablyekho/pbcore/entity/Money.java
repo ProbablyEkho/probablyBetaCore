@@ -1,6 +1,7 @@
 package dev.probablyekho.pbcore.entity;
 
 import dev.probablyekho.pbcore.item.ItemRegistry;
+import dev.probablyekho.pbcore.sound.SoundRegistry;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
@@ -38,7 +39,7 @@ public class Money extends ThrowableItemProjectile {
         Entity entity = result.getEntity();
         if(entity instanceof Player player && !this.level().isClientSide) {
             player.giveExperienceLevels(100);
-            this.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.35F + 0.9F);
+            this.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundRegistry.CASH.get(), SoundSource.PLAYERS, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.35F + 0.9F);
         }
         if(!(entity instanceof Player)) {
             this.level().addFreshEntity(new ItemEntity(this.level(), result.getLocation().x, result.getLocation().y, result.getLocation().z, ItemRegistry.MONEY.toStack()));

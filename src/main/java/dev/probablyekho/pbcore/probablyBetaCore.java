@@ -198,6 +198,8 @@ public class probablyBetaCore {
 			event.accept(ItemRegistry.MUSIC_DISC_CALM4);
 			event.accept(ItemRegistry.MUSIC_DISC_PTERODACTYL);
 			event.accept(ItemRegistry.FIREBALL);
+			event.accept(ItemRegistry.COIN);
+			event.accept(ItemRegistry.MONEY);
 		}
 		if (event.getTabKey() == CreativeModeTabs.COMBAT) {
 			event.accept(ItemRegistry.QUIVER);

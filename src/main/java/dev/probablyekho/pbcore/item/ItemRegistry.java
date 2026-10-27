@@ -26,6 +26,8 @@ public class ItemRegistry {
 
     public static final DeferredItem<Item> FIREBALL = ITEMS.register("fireball",
             () -> new FireballItem(new Item.Properties()));
+    public static final DeferredItem<Item> COIN = ITEMS.register("coin",
+            () -> new CoinItem(new Item.Properties()));
     public static final DeferredItem<Item> MONEY = ITEMS.register("money",
             () -> new MoneyItem(new Item.Properties()));
     public static final DeferredItem<Item> QUIVER = ITEMS.register("quiver",
