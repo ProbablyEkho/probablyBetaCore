@@ -44,9 +44,11 @@
     "requireAnnotations": true
   },
   "client": [
+    "BlockMarkerMixin",
     "CapeLayerMixin",
     "ChatComponentMixin",
     "ChatScreenMixin",
+    "ClientLevelMixin",
     "GlowingNametagMixin",
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",

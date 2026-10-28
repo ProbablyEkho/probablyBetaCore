@@ -84,6 +84,9 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> GOURD_CROP = registerBlock(
             "gourd_crop",
             () -> new GourdCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> ASOF = registerBlock(
+            "asof",
+            () -> new AsofBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).noOcclusion().instabreak().sound(SoundType.WOOL).lightLevel(p_187437_ -> 15).pushReaction(PushReaction.DESTROY)));
 
     public static final DeferredBlock<Block> WHITE_LAMP = registerBlock("white_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));
     public static final DeferredBlock<Block> LIGHT_GRAY_LAMP = registerBlock("light_gray_lamp", () -> new RedstoneLampBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.GLASS).isValidSpawn(Blocks::always)));
