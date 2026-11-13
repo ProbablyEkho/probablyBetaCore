@@ -53,6 +53,16 @@
                 "name": "pbcore:sfx/cash",
                 "stream": true
             }
-        ]
+        ],
+		"subtitle": "subtitles.pbcore.cash"
+    },
+    "banshee_cry": {
+        "sounds": [
+            {
+                "name": "pbcore:sfx/banshee_cry",
+                "stream": true
+            }
+        ],
+		"subtitle": "subtitles.pbcore.banshee_cry"
     }
 }

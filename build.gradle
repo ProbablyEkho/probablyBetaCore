@@ -133,6 +133,7 @@ dependencies {
     implementation "maven.modrinth:AANobbMI:uMOpc5uV" // Sodium
     implementation "maven.modrinth:xkrdwmh2:BeKW6EeH" // Moderner Beta
     implementation files("build/libs/NostalgicTweaks-mc1.21.1-NeoForge-2.0.0-beta.923-indev.1.jar") // Nostalgic Tweaks
+    implementation files("build/libs/better_straw_beds-neoforge-1.21.1-1.0.0.jar") // Better Straw Beds
     implementation "maven.modrinth:MVARlG2f:9GjNW2Gf" // Zeta
     implementation "maven.modrinth:7nEkcq0F:eW0CuJzM" // Creature Feature
 

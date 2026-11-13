@@ -38,6 +38,7 @@ public class SoundRegistry {
     public static final ResourceKey<JukeboxSong> PTERODACTYL_KEY = createSong("pterodactyl");
 
     public static final Supplier<SoundEvent> CASH = registerSoundEvent("cash");
+    public static final Supplier<SoundEvent> BANSHEE_CRY = registerSoundEvent("banshee_cry");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(probablyBetaCore.MODID, name);

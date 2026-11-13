@@ -56,9 +56,12 @@
   "item.pbcore.music_disc_calm4.desc": "Markus Alexei - magnetic circuit",
   "item.pbcore.music_disc_pterodactyl.desc": "Markus Alexei - the pterodactyl",
 
-  "pbcore.configuration.cobblestone": "Monster Room Main Block",
-  "pbcore.configuration.mossy_cobblestone": "Monster Room Secondary Block",
+  "subtitles.pbcore.cash": "Cash",
+  "subtitles.pbcore.banshee_cry": "Banshee cries",
 
   "entity.pbcore.primed_red": "Primed RED",
-  "entity.pbcore.jellyfish": "Jellyfish"
+  "entity.pbcore.jellyfish": "Jellyfish",
+
+  "pbcore.configuration.cobblestone": "Monster Room Main Block",
+  "pbcore.configuration.mossy_cobblestone": "Monster Room Secondary Block"
 }

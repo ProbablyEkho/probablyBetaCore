@@ -24,7 +24,7 @@ public class ItemMixin {
         if(!stack.isDamageableItem() || !stack.isDamaged()) {
             return;
         }
-        stack.setDamageValue(Math.max(0, stack.getDamageValue() - 64));
+        stack.setDamageValue(Math.max(0, stack.getDamageValue() - 32));
         other.shrink(1);
         player.playSound(SoundEvents.ITEM_PICKUP);
         cir.setReturnValue(true);

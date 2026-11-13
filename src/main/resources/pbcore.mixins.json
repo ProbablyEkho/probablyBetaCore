@@ -34,6 +34,7 @@
     "PumpkinBlockMixin",
     "SlimeMixin",
     "SpiderMixin",
+    "StrawBedBlockMixin",
     "TreeGrowerMixin",
     "ZetaPistonStructureResolverMixin"
   ],
