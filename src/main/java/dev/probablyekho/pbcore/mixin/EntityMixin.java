@@ -21,14 +21,23 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public class EntityMixin {
     @Shadow private Level level;
-    @Unique
-    Entity entity = (Entity)(Object)this;
+    @Unique Entity entity = (Entity)(Object)this;
 
+    @Redirect(method = "collide", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;onGround()Z"))
+    private boolean aboveGroundStepUp(Entity entity) {
+        return true;
+    }
+
+    @Redirect(method = "collide", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;maxUpStep()F"))
+    private float halvedStepHeightCheck(Entity entity) {
+        return entity.onGround() ? entity.maxUpStep() : entity.maxUpStep() * (2F / 3F);
+    }
 
     @Inject(method = "isPushable", at = @At("HEAD"), cancellable = true)
     private void pushableTnt(CallbackInfoReturnable<Boolean> cir) {
