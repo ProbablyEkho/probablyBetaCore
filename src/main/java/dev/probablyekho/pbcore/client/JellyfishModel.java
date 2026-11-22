@@ -33,12 +33,9 @@ public class JellyfishModel<T extends Entity> extends HierarchicalModel<T> {
         PartDefinition partdefinition = meshdefinition.getRoot();
         CubeDeformation cubedeformation = new CubeDeformation(0.02F);
         int i = -16;
-        partdefinition.addOrReplaceChild(
-            "body", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -8.0F, -8.0F, 16.0F, 12.0F, 16.0F, cubedeformation), PartPose.offset(0.0F, 8.0F, 0.0F)
-        );
         int j = 8;
+        partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -8.0F, -8.0F, 16.0F, 12.0F, 16.0F, cubedeformation), PartPose.offset(0.0F, 8.0F, 0.0F));
         CubeListBuilder cubelistbuilder = CubeListBuilder.create().texOffs(48, 0).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 12.0F, 2.0F);
-
         for (int k = 0; k < 8; k++) {
             double d0 = (double)k * Math.PI * 2.0 / 8.0;
             float f = (float)Math.cos(d0) * 5.0F;
@@ -48,7 +45,6 @@ public class JellyfishModel<T extends Entity> extends HierarchicalModel<T> {
             float f3 = (float)d0;
             partdefinition.addOrReplaceChild(createTentacleName(k), cubelistbuilder, PartPose.offsetAndRotation(f, 15.0F, f2, 0.0F, f3, 0.0F));
         }
-
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
 
