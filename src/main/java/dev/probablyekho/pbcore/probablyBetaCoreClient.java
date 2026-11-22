@@ -74,7 +74,7 @@ public class probablyBetaCoreClient {
                 shaderProgram.getUniform("Resolution").setFloat(96F);
                 shaderProgram.getUniform("MosaicSize").setFloat(2F);
                 shaderProgram.getUniform("PlayerHealth").setFloat(player.isCreative() || player.isSpectator() || player.getHealth() > player.getMaxHealth() * 0.5F ? 0F : Math.clamp(1.0F - player.getHealth() / (player.getMaxHealth() * 0.5F), 0F, 1F));
-                shaderProgram.getUniform("Dead").setFloat(player.getHealth() > 0F ? 0F : 1F);
+                shaderProgram.getUniform("Dead").setFloat(player.isCreative() || player.isSpectator() || player.getHealth() > 0F ? 0F : 1F);
             }
         }
     }
