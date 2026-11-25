@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pbcore:block/birch_fence_ns"
+    },
+    "axis=z": {
+      "model": "pbcore:block/birch_fence_ew"
+    }
+  }
+}

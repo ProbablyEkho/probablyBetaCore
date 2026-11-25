@@ -172,6 +172,9 @@ public class probablyBetaCore {
 		if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 			event.accept(BlockRegistry.CHAIR);
 			event.accept(BlockRegistry.LANTERN);
+            event.accept(BlockRegistry.OAK_FENCE);
+            event.accept(BlockRegistry.BIRCH_FENCE);
+            event.accept(BlockRegistry.SPRUCE_FENCE);
 		}
 		if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			event.accept(BlockRegistry.BUSH);
@@ -189,6 +192,7 @@ public class probablyBetaCore {
 			event.accept(BlockRegistry.GOURD);
 			event.accept(BlockRegistry.GHOST_GOURD);
 			event.accept(BlockRegistry.GOURD_CROP);
+            event.accept(BlockRegistry.CHAMOMILE);
 		}
 		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			event.accept(ItemRegistry.MUSIC_DISC_ALPHA);
@@ -200,6 +204,7 @@ public class probablyBetaCore {
 			event.accept(ItemRegistry.FIREBALL);
 			event.accept(ItemRegistry.COIN);
 			event.accept(ItemRegistry.MONEY);
+            event.accept(BlockRegistry.ASOF);
 		}
 		if (event.getTabKey() == CreativeModeTabs.COMBAT) {
 			event.accept(ItemRegistry.QUIVER);

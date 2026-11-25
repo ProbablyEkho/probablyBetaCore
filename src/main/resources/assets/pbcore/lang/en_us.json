@@ -13,6 +13,10 @@
   "block.pbcore.nether_sulphur_ore": "Nether Sulphur Ore",
   "block.pbcore.red": "RED",
   "block.pbcore.bonfire": "Bonfire",
+  "block.pbcore.chamomile": "Chamomile",
+  "block.pbcore.oak_fence": "Wooden Fence",
+  "block.pbcore.birch_fence": "Darkwooden Fence",
+  "block.pbcore.spruce_fence": "Lightwooden Fence",
 
   "block.pbcore.ghost_pumpkin": "Ghost Pumpkin",
   "block.pbcore.carved_ghost_pumpkin": "Carved Ghost Pumpkin",

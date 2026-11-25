@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "pbcore:block/chamomile_bottom"
+    },
+    "half=upper": {
+      "model": "pbcore:block/chamomile_top"
+    }
+  }
+}

@@ -71,6 +71,18 @@ public class BlockRegistry {
 	public static final DeferredBlock<Block> BONFIRE = registerBlock(
             "bonfire",
             () -> new BonfireBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).noCollission().strength(2.0F).sound(SoundType.WOOD).lightLevel((p_152684_) -> 15).noOcclusion().ignitedByLava()));
+    public static final DeferredBlock<Block> CHAMOMILE = registerBlock(
+            "chamomile",
+            () -> new ChamomileBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> OAK_FENCE = registerBlock(
+            "oak_fence",
+            () -> new FenceTwoBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> BIRCH_FENCE = registerBlock(
+            "birch_fence",
+            () -> new FenceTwoBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> SPRUCE_FENCE = registerBlock(
+            "spruce_fence",
+            () -> new FenceTwoBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
 
     public static final DeferredBlock<Block> GHOST_PUMPKIN = registerBlock(
             "ghost_pumpkin",
