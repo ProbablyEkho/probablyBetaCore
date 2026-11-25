@@ -36,7 +36,13 @@ public class EntityMixin {
 
     @Redirect(method = "collide", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;maxUpStep()F"))
     private float halvedStepHeightCheck(Entity entity) {
-        return entity.onGround() ? entity.maxUpStep() : entity.maxUpStep() * (2F / 3F);
+        if (entity.onGround()) {
+            return entity.maxUpStep();
+        } else {
+            if(entity.isSprinting()) {
+                return entity.maxUpStep() * (2F / 3F);
+            } else return 0F;
+        }
     }
 
     @Inject(method = "isPushable", at = @At("HEAD"), cancellable = true)
