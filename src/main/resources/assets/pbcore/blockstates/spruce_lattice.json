@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pbcore:block/spruce_lattice_ns"
+    },
+    "axis=z": {
+      "model": "pbcore:block/spruce_lattice_ew"
+    }
+  }
+}

@@ -83,6 +83,15 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> SPRUCE_FENCE = registerBlock(
             "spruce_fence",
             () -> new FenceTwoBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> OAK_LATTICE = registerBlock(
+            "oak_lattice",
+            () -> new LatticeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> BIRCH_LATTICE = registerBlock(
+            "birch_lattice",
+            () -> new LatticeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> SPRUCE_LATTICE = registerBlock(
+            "spruce_lattice",
+            () -> new LatticeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion().forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava()));
 
     public static final DeferredBlock<Block> GHOST_PUMPKIN = registerBlock(
             "ghost_pumpkin",

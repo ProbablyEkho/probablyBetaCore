@@ -175,6 +175,9 @@ public class probablyBetaCore {
             event.accept(BlockRegistry.OAK_FENCE);
             event.accept(BlockRegistry.BIRCH_FENCE);
             event.accept(BlockRegistry.SPRUCE_FENCE);
+            event.accept(BlockRegistry.OAK_LATTICE);
+            event.accept(BlockRegistry.BIRCH_LATTICE);
+            event.accept(BlockRegistry.SPRUCE_LATTICE);
 		}
 		if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			event.accept(BlockRegistry.BUSH);

@@ -2,6 +2,9 @@
   "values": [
     "pbcore:oak_fence",
     "pbcore:birch_fence",
-    "pbcore:spruce_fence"
+    "pbcore:spruce_fence",
+    "pbcore:oak_lattice",
+    "pbcore:birch_lattice",
+    "pbcore:spruce_lattice"
   ]
 }

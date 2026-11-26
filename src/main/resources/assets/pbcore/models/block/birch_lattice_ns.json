@@ -1,0 +1,8 @@
+{
+  "render_type": "cutout_mipped",
+  "parent": "pbcore:block/template_lattice_ns",
+  "textures": {
+    "side": "pbcore:block/birch_lattice",
+    "tip": "pbcore:block/birch_lattice_tip"
+  }
+}

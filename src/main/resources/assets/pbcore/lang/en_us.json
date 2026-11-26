@@ -17,6 +17,9 @@
   "block.pbcore.oak_fence": "Wooden Fence",
   "block.pbcore.birch_fence": "Darkwooden Fence",
   "block.pbcore.spruce_fence": "Lightwooden Fence",
+  "block.pbcore.oak_lattice": "Wooden Lattice",
+  "block.pbcore.birch_lattice": "Darkwooden Lattice",
+  "block.pbcore.spruce_lattice": "Lightwooden Lattice",
 
   "block.pbcore.ghost_pumpkin": "Ghost Pumpkin",
   "block.pbcore.carved_ghost_pumpkin": "Carved Ghost Pumpkin",

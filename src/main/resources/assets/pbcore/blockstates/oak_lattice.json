@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pbcore:block/oak_lattice_ns"
+    },
+    "axis=z": {
+      "model": "pbcore:block/oak_lattice_ew"
+    }
+  }
+}
